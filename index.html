@@ -19,6 +19,8 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
     <nav id="main-nav" class="main-nav" aria-label="Fő navigáció">
+      <a href="#gyorsterkep">Térkép</a>
+      <a href="#jelolesek">Jelölések</a>
       <a href="#het5">5. hét</a>
       <a href="#het6">6. hét</a>
       <a href="#het7">7. hét</a>
@@ -34,11 +36,11 @@
         <h1>5-8. heti összefoglaló, hogy ne csak bemagold, hanem tényleg értsd is.</h1>
         <p class="lead">
           Ez az oldal a megadott előadásanyagok alapján válogatja ki a legfontosabb elméletet, és minden témát
-          értelmezési szinten is elmagyaráz. A cél nem az, hogy „tankönyv-ízű” legyen, hanem hogy gyorsan át tudd látni,
-          mi miről szól, mit jelez egy mutató, és melyik képlet mögött mi a logika.
+          értelmezési szinten is elmagyaráz. A cél az, hogy gyorsan átlásd, mit jelent egy mutató, mit jelöl egy képletben
+          egy betű vagy index, és hogyan kell ezeket vizsgán magyarul is értelmezni.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#gyorsterkep">Mutasd a tématérképet</a>
+          <a class="button primary" href="#jelolesek">Először a jelölésekhez</a>
           <a class="button secondary" href="szamolasok.html">Ugrás a számolásokhoz</a>
         </div>
       </div>
@@ -47,24 +49,28 @@
         <h2>Mit kapsz ezen az oldalon?</h2>
         <ul class="bullet-list">
           <li>Témakörönként szétválogatott, vizsgára tanulható elmélet.</li>
-          <li>Egyszerű nyelvű magyarázat: mit jelent egy fogalom a gyakorlatban.</li>
-          <li>Vizsgacsapdák: mire könnyű rosszul emlékezni.</li>
-          <li>Kapcsolódó mintafeladatok külön oldalon, részletes megoldással.</li>
+          <li>Külön blokkot a jelölésekhez: mit jelent az <code>H</code>, a <code>χ²</code>, a <code>σ²</code> vagy az <code>f*<sub>ij</sub></code>.</li>
+          <li>Értelmezési minták: milyen szöveget érdemes mondani a kapott eredményre.</li>
+          <li>Külön számolásos oldal részletes megoldással.</li>
         </ul>
         <div class="note-card">
           <strong>Fontos megjegyzés</strong>
           <p>
             Az 5-6. heti bontás a kapott <em>1-6. előadás</em> PDF belső sorrendjét követi, mert külön heti tematika a megadott fájlok között nem szerepelt.
-            A 7-8. hétet a külön 7. és 8. előadás alapján foglaltam össze.
+            A 7-8. hét a külön 7. és 8. előadás anyagából készült.
           </p>
         </div>
       </aside>
     </section>
 
-    <section id="gyorsterkep" class="overview">
+    <section id="gyorsterkep" class="overview section-card">
       <div class="section-heading">
         <span class="eyebrow">Gyors térkép</span>
         <h2>Miről szól a 4 hét egy mondatban?</h2>
+        <p>
+          Ezt érdemes fejben tartani: először leírod egy sokaság közepét és szóródását, utána már azt nézed,
+          van-e kapcsolat a változók között, és ha igen, mennyire erős.
+        </p>
       </div>
 
       <div class="week-strip">
@@ -72,28 +78,28 @@
           <span class="week-number">5</span>
           <div>
             <h3>Középértékek</h3>
-            <p>Hogyan írjuk le egy sokaság „tipikus” értékét.</p>
+            <p>Hogyan írjuk le egy sokaság tipikus értékét.</p>
           </div>
         </article>
         <article class="week-chip">
           <span class="week-number">6</span>
           <div>
             <h3>Szóródás és alak</h3>
-            <p>Mennyire szétszórtak az adatok, és merre torzul az eloszlás.</p>
+            <p>Mennyire szétterülnek az adatok, és milyen az eloszlás formája.</p>
           </div>
         </article>
         <article class="week-chip">
           <span class="week-number">7</span>
           <div>
-            <h3>Kapcsolatvizsgálat alapjai</h3>
-            <p>Milyen változópárok között milyen módszerrel keresünk kapcsolatot.</p>
+            <h3>Kapcsolatvizsgálat</h3>
+            <p>Milyen változótípushoz milyen módszer illik.</p>
           </div>
         </article>
         <article class="week-chip">
           <span class="week-number">8</span>
           <div>
             <h3>Vegyes kapcsolat</h3>
-            <p>Mit magyaráz meg a csoportosító ismérv a mennyiségi változó szóródásából.</p>
+            <p>Mennyit magyaráznak meg a csoportkülönbségek a szóródásból.</p>
           </div>
         </article>
       </div>
@@ -103,7 +109,7 @@
           <h3>Kapcsolatvizsgálat választófa</h3>
           <p>
             A kapcsolatvizsgálat első kérdése mindig ez: <strong>milyen típusú változókat hasonlítasz össze?</strong>
-            Ha ezt jól eldöntöd, a módszer fele már meg is van.
+            Ha ezt jól eldöntöd, a módszer kiválasztása már sokkal könnyebb.
           </p>
         </div>
         <svg class="diagram-svg" viewBox="0 0 860 240" role="img" aria-label="Kapcsolatvizsgálat döntési fa">
@@ -119,16 +125,114 @@
 
           <rect x="620" y="74" width="210" height="92" rx="24"></rect>
           <text x="725" y="112" text-anchor="middle">Két mennyiségi ismérv</text>
-          <text x="725" y="140" text-anchor="middle">korreláció/regresszió</text>
+          <text x="725" y="140" text-anchor="middle">korreláció vagy regresszió</text>
 
           <path d="M240 120 L325 60"></path>
           <path d="M240 120 L325 160"></path>
           <path d="M535 60 L620 120"></path>
           <path d="M535 160 L620 120"></path>
 
-          <text x="430" y="220" text-anchor="middle">asszociáció</text>
-          <text x="725" y="220" text-anchor="middle">vegyes kapcsolat vagy korreláció</text>
+          <text x="430" y="220" text-anchor="middle">asszociáció vagy vegyes kapcsolat</text>
+          <text x="725" y="220" text-anchor="middle">korrelációs kapcsolat</text>
         </svg>
+      </div>
+    </section>
+
+    <section id="jelolesek" class="topic-section">
+      <div class="section-heading">
+        <span class="eyebrow">Jelölések</span>
+        <h2>Mit jelentenek a betűk, indexek és csillagok?</h2>
+        <p>
+          A vizsgán a legtöbb bizonytalanság nem is a képletnél, hanem a jelöléseknél jön elő. Ezt a blokkot úgy írtam meg,
+          hogy ha ránézel egy képletre, azonnal tudd: melyik rész mire utal.
+        </p>
+      </div>
+
+      <div class="card-grid two">
+        <article class="concept-card">
+          <h3>Alapjelölések a leíró statisztikában</h3>
+          <div class="symbol-table">
+            <div class="symbol-row">
+              <code>N</code>
+              <p>Az elemszám, vagyis ennyi megfigyelésből áll a sokaság vagy a minta.</p>
+            </div>
+            <div class="symbol-row">
+              <code>x<sub>i</sub></code>
+              <p>Az <em>i-edik</em> megfigyelés értéke. Az alsó index azt jelzi, hogy egy konkrét elemről beszélünk.</p>
+            </div>
+            <div class="symbol-row">
+              <code>x̄</code>
+              <p>A számtani átlag. Úgy olvasd: „x vonal”. Ez a sokaság átlagos értéke.</p>
+            </div>
+            <div class="symbol-row">
+              <code>Me</code>
+              <p>Medián: a rendezett adatsor közepe.</p>
+            </div>
+            <div class="symbol-row">
+              <code>Mo</code>
+              <p>Módusz: a leggyakoribb érték.</p>
+            </div>
+            <div class="symbol-row">
+              <code>σ²</code>
+              <p>Variancia vagy szórásnégyzet. A négyzetjel arra utal, hogy még nem vontunk gyököt.</p>
+            </div>
+            <div class="symbol-row">
+              <code>σ</code>
+              <p>Szórás. A variancia négyzetgyöke, és ugyanabban a mértékegységben van, mint az adatok.</p>
+            </div>
+            <div class="symbol-row">
+              <code>V</code>
+              <p>Relatív szórás. Megmutatja, hogy a szórás az átlag hány százaléka.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="concept-card">
+          <h3>Kapcsolatvizsgálati jelölések</h3>
+          <div class="symbol-table">
+            <div class="symbol-row">
+              <code>f<sub>ij</sub></code>
+              <p>A tényleges gyakoriság az <em>i</em>. sor és <em>j</em>. oszlop cellájában.</p>
+            </div>
+            <div class="symbol-row">
+              <code>f*<sub>ij</sub></code>
+              <p>A várt gyakoriság ugyanabban a cellában, ha a két ismérv független lenne. A csillag mindig arra utal, hogy ez elméleti, nem mért érték.</p>
+            </div>
+            <div class="symbol-row">
+              <code>r</code>, <code>c</code>
+              <p>A sorok és oszlopok száma a kereszttáblában.</p>
+            </div>
+            <div class="symbol-row">
+              <code>χ²</code>
+              <p>Khi-négyzet mutató. Azt méri, mennyire térnek el a tényleges gyakoriságok a várt gyakoriságoktól.</p>
+            </div>
+            <div class="symbol-row">
+              <code>V</code>
+              <p>Cramer-féle V. 0 és 1 közé eső szorossági mutató asszociációs kapcsolatnál.</p>
+            </div>
+            <div class="symbol-row">
+              <code>SST</code>
+              <p>Teljes eltérésnégyzet-összeg, vagyis a teljes szóródás négyzetes formában.</p>
+            </div>
+            <div class="symbol-row">
+              <code>SS<sub>belső</sub></code>, <code>SS<sub>külső</sub></code>
+              <p>A vegyes kapcsolatnál a belső és a külső szóródás négyzetes összegei.</p>
+            </div>
+            <div class="symbol-row">
+              <code>H²</code>, <code>H</code>
+              <p><code>H²</code> a megmagyarázott szóródási hányad, <code>H</code> pedig ennek gyöke, vagyis a szorossági mutató.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mini-summary">
+        <h3>Gyors olvasási szabály</h3>
+        <p>
+          Ha alsó indexet látsz, az többnyire egy konkrét elemre, cellára vagy csoportra utal. Ha csillagot látsz,
+          az rendszerint „várt” vagy „elméleti” értéket jelent. Ha négyzet van a mutatón, akkor legtöbbször még
+          négyzetes formában vagyunk, tehát gyököt kell vonni az eredeti mértékegységhez.
+        </p>
       </div>
     </section>
 
@@ -137,8 +241,8 @@
         <span class="eyebrow">5. hét</span>
         <h2>Mennyiségi ismérvek elemzése és középértékek</h2>
         <p>
-          Ez a blokk arról szól, hogyan tudsz egy sok adatból álló sokaságot <strong>egy-két jól értelmezhető számmal</strong>
-          összefoglalni. A kulcskérdés: mi az a „tipikus” érték, és melyik középérték mit mond el valójában.
+          Ez a blokk arról szól, hogyan tudsz egy sok adatból álló sokaságot egy-két jól értelmezhető számmal összefoglalni.
+          A kulcskérdés: mi az a tipikus érték, és melyik középérték mit mond el valójában.
         </p>
       </div>
 
@@ -146,24 +250,23 @@
         <article class="info-card">
           <h3>Miről van szó egyszerűen?</h3>
           <p>
-            Ha van 100 vagy 10 000 adatod, nem akarod egyenként felsorolni őket. Olyan mutatók kellenek,
-            amelyek megmutatják, hol van az adatok közepe. Ilyen a <strong>medián</strong>, a <strong>módusz</strong>
-            és a különböző <strong>átlagok</strong>.
+            Ha sok adatod van, nem akarod őket egyenként felsorolni. Olyan mutatók kellenek, amelyek megmutatják,
+            hol van az adatok közepe. Ilyen a medián, a módusz és a különböző átlagok.
           </p>
         </article>
         <article class="info-card accent">
           <h3>Vizsgán erre figyelj</h3>
           <ul class="bullet-list">
-            <li>A medián a rangsor közepe, nem az átlag.</li>
-            <li>A módusz a leggyakoribb érték, nem feltétlenül a „közepes”.</li>
+            <li>A medián a rangsor közepe, nem ugyanaz, mint az átlag.</li>
+            <li>A módusz a leggyakoribb érték, nem feltétlenül a „középső”.</li>
             <li>A számtani átlag érzékeny a kiugró értékekre.</li>
           </ul>
         </article>
         <article class="info-card caution">
           <h3>Tipikus csapda</h3>
           <p>
-            Ha az eloszlás ferde vagy outliert tartalmaz, a számtani átlag félrevezető lehet.
-            Ilyenkor a medián gyakran sokkal jobb „tipikus érték”.
+            Ha az eloszlás ferde vagy outliert tartalmaz, a számtani átlag félrevezető lehet. Ilyenkor a medián gyakran
+            jobb képet ad a „tipikus” értékről.
           </p>
         </article>
       </div>
@@ -173,16 +276,14 @@
           <h3>Empirikus és elméleti eloszlás</h3>
           <p>
             Az <strong>empirikus eloszlás</strong> a ténylegesen megfigyelt adatok alakja. Az <strong>elméleti eloszlás</strong>
-            egy ideális modell, amihez viszonyítunk. Vizsgán általában azt kell megérteni, hogy a valódi adatok
-            ritkán „tankönyvszépek”.
+            egy ideális modell, amihez viszonyítunk. Vizsgán azt kell látni, hogy a valódi adatok ritkán tökéletesek.
           </p>
         </article>
         <article class="concept-card">
           <h3>Homogenitás és heterogenitás</h3>
           <p>
-            <strong>Homogén</strong> a sokaság, ha az értékek közel vannak egymáshoz. <strong>Heterogén</strong>,
-            ha nagy a szóródás vagy több eltérő alcsoport keveredik benne. Ezért fontos megnézni az eloszlás alakját,
-            nem csak egyetlen átlagot.
+            <strong>Homogén</strong> a sokaság, ha az értékek közel vannak egymáshoz. <strong>Heterogén</strong>, ha nagy a szóródás
+            vagy több eltérő alcsoport keveredik benne. Emiatt nem elég csak egyetlen átlagot nézni.
           </p>
         </article>
       </div>
@@ -191,17 +292,32 @@
         <article class="formula-card">
           <h3>Medián</h3>
           <p>A rangsor közepe. Azt mondja meg, melyik értéknél van az adatok fele alatta és fele fölötte.</p>
-          <code>Me = a rendezett adatsor közepe</code>
+          <code class="formula-code">Me = a rendezett adatsor közepe</code>
+          <ul class="symbol-list">
+            <li><code>Me</code>: medián.</li>
+            <li>Ha páros számú adat van, a két középső elem közé kerül.</li>
+            <li>Kevésbé érzékeny az outlierekre, mint az átlag.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Módusz</h3>
           <p>A leggyakoribb érték. Akkor hasznos, ha a legtipikusabb előfordulást keresed.</p>
-          <code>Mo = legnagyobb gyakoriságú érték</code>
+          <code class="formula-code">Mo = legnagyobb gyakoriságú érték</code>
+          <ul class="symbol-list">
+            <li><code>Mo</code>: módusz.</li>
+            <li>Diszkrét adatoknál könnyen felismerhető.</li>
+            <li>Több módusz is lehet, ha több érték ugyanannyiszor fordul elő.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Számtani átlag</h3>
-          <p>Az összes érték összege osztva az elemszámmal. További számítások alapja, de érzékeny outlierre.</p>
-          <code>x̄ = Σxᵢ / N</code>
+          <p>Az összes érték összege osztva az elemszámmal. Sok további számítás alapja.</p>
+          <code class="formula-code">x̄ = Σx<sub>i</sub> / N</code>
+          <ul class="symbol-list">
+            <li><code>x<sub>i</sub></code>: az i-edik megfigyelés.</li>
+            <li><code>Σ</code>: összegzés jel.</li>
+            <li><code>N</code>: elemszám.</li>
+          </ul>
         </article>
       </div>
 
@@ -216,14 +332,14 @@
           </ul>
         </article>
         <article class="concept-card">
-          <h3>Amit érdemes szó szerint megjegyezni</h3>
-          <p>
-            Pozitív adatoknál az átlagok nagyságrendje:
-          </p>
-          <code>Xmin ≤ Xh ≤ Xg ≤ X̄ ≤ Xq ≤ Xmax</code>
-          <p>
-            Ez segít gyorsan ellenőrizni, hogy a számolásod reális-e.
-          </p>
+          <h3>Átlagok nagyságrendje</h3>
+          <p>Pozitív adatoknál a tipikus sorrend:</p>
+          <code class="formula-code">X<sub>min</sub> ≤ X<sub>h</sub> ≤ X<sub>g</sub> ≤ x̄ ≤ X<sub>q</sub> ≤ X<sub>max</sub></code>
+          <ul class="symbol-list">
+            <li><code>X<sub>h</sub></code>: harmonikus átlag.</li>
+            <li><code>X<sub>g</sub></code>: mértani átlag.</li>
+            <li><code>X<sub>q</sub></code>: négyzetes átlag.</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -233,8 +349,8 @@
         <span class="eyebrow">6. hét</span>
         <h2>Szóródási mutatók, outlierek és aszimmetria</h2>
         <p>
-          Itt már nem az a kérdés, hogy <em>hol van a közép</em>, hanem az, hogy <strong>mennyire szóródnak</strong>
-          körülötte az adatok, és milyen az eloszlás formája.
+          Itt már nem az a kérdés, hogy hol van a közép, hanem az, hogy mennyire szóródnak körülötte az adatok,
+          és milyen az eloszlás formája.
         </p>
       </div>
 
@@ -242,22 +358,21 @@
         <article class="info-card">
           <h3>Alapgondolat</h3>
           <p>
-            Két sokaságnak lehet ugyanaz az átlaga, miközben az egyik szinte egyforma értékekből áll,
-            a másik pedig nagyon szét van szórva. Ezt méri a szóródás.
+            Két sokaságnak lehet ugyanaz az átlaga, miközben az egyik majdnem egyforma értékekből áll, a másik pedig
+            nagyon szét van húzva. Ezt méri a szóródás.
           </p>
         </article>
         <article class="info-card accent">
           <h3>Mit mér a szórás?</h3>
           <p>
             A szórás azt mutatja meg, hogy az értékek átlagosan mennyivel térnek el a számtani átlagtól.
-            Minél nagyobb, annál „szélesebb” az eloszlás.
+            Minél nagyobb, annál szélesebb az eloszlás.
           </p>
         </article>
         <article class="info-card caution">
           <h3>Vizsgacsapda</h3>
           <p>
-            A variancia és a szórás nem ugyanaz. A variancia négyzetes mennyiség, a szórás a variancia gyöke,
-            és ugyanabban a mértékegységben van, mint az alapadatok.
+            A variancia és a szórás nem ugyanaz. A variancia négyzetes mennyiség, a szórás pedig ennek gyöke.
           </p>
         </article>
       </div>
@@ -265,18 +380,34 @@
       <div class="formula-rack">
         <article class="formula-card">
           <h3>Terjedelem</h3>
-          <p>A minimum és maximum különbsége. Gyors, de érzékeny a szélső értékekre.</p>
-          <code>R = Xmax - Xmin</code>
+          <p>A minimum és maximum különbsége. Gyors mutató, de érzékeny a szélső értékekre.</p>
+          <code class="formula-code">R = X<sub>max</sub> - X<sub>min</sub></code>
+          <ul class="symbol-list">
+            <li><code>R</code>: terjedelem.</li>
+            <li><code>X<sub>max</sub></code>: legnagyobb érték.</li>
+            <li><code>X<sub>min</sub></code>: legkisebb érték.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Variancia és szórás</h3>
           <p>A szórás az átlagtól vett eltérések négyzetes átlagának négyzetgyöke.</p>
-          <code>σ² = Σ(xᵢ - x̄)² / N, &nbsp; σ = √σ²</code>
+          <code class="formula-code">σ² = Σ(x<sub>i</sub> - x̄)² / N
+σ = √σ²</code>
+          <ul class="symbol-list">
+            <li><code>σ²</code>: variancia.</li>
+            <li><code>σ</code>: szórás.</li>
+            <li><code>(x<sub>i</sub> - x̄)</code>: eltérés az átlagtól.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Relatív szórás</h3>
-          <p>Különböző mértékegységű vagy eltérő átlagú sokaságok összehasonlítására jó.</p>
-          <code>V = σ / x̄ · 100%</code>
+          <p>Különböző átlagú vagy különböző mértékegységű sokaságok összehasonlítására jó.</p>
+          <code class="formula-code">V = σ / x̄ · 100%</code>
+          <ul class="symbol-list">
+            <li><code>V</code>: relatív szórás.</li>
+            <li>Százalékosan olvasható.</li>
+            <li>Például <code>V = 28%</code> azt jelenti, hogy a szórás az átlag 28%-a.</li>
+          </ul>
         </article>
       </div>
 
@@ -284,9 +415,8 @@
         <article class="concept-card">
           <h3>Outlier: miért veszélyes?</h3>
           <p>
-            Az <strong>outlier</strong> kiugró érték. Az átlagot és a szórást is meg tudja húzni, ezért két, amúgy
-            hasonló sokaság hirtelen nagyon különbözőnek tűnhet. A medián és a kvartiliseken alapuló mutatók
-            sokkal ellenállóbbak.
+            Az <strong>outlier</strong> kiugró érték. Az átlagot és a szórást is meg tudja húzni, ezért két amúgy hasonló
+            sokaság nagyon különbözőnek tűnhet. A medián és a kvartiliseken alapuló mutatók ellenállóbbak.
           </p>
         </article>
         <article class="concept-card">
@@ -303,8 +433,8 @@
         <div class="diagram-copy">
           <h3>Hogyan olvass eloszlásalakot?</h3>
           <p>
-            Nem kell minden vizsgán grafikonrajzoló művésszé válni. Elég, ha felismered: az adatok középre húznak,
-            széthúznak, vagy valamelyik irányba elnyúlnak.
+            Nem kell minden vizsgán grafikonrajzoló művésszé válni. Elég felismerni, hogy az adatok középre húznak,
+            szétterülnek vagy valamelyik irányba elnyúlnak.
           </p>
         </div>
         <svg class="diagram-svg shapes" viewBox="0 0 880 210" role="img" aria-label="Szimmetrikus és ferde eloszlások">
@@ -330,8 +460,8 @@
         <span class="eyebrow">7. hét</span>
         <h2>Sztochasztikus kapcsolatok: kapcsolat, de nem biztos okság</h2>
         <p>
-          A 7. hét legfontosabb üzenete: <strong>a kapcsolat nem ugyanaz, mint az ok-okozat</strong>.
-          A statisztikában gyakran csak azt látjuk, hogy két jelenség együtt mozog, nem azt, hogy az egyik biztosan okozza a másikat.
+          A 7. hét legfontosabb üzenete: a kapcsolat nem ugyanaz, mint az ok-okozat. A statisztika sokszor együttmozgást lát,
+          de ebből még nem következik automatikusan, hogy az egyik változó okozza a másikat.
         </p>
       </div>
 
@@ -340,7 +470,7 @@
           <h3>Sztochasztikus kapcsolat</h3>
           <p>
             Nem determinisztikus, vagyis nem „ha X, akkor mindig Y” típusú. Inkább valószínűségi tendencia:
-            egy változatból <em>inkább</em> lehet következtetni a másikra.
+            az egyik ismérvből csak tendenciózusan következtethetsz a másikra.
           </p>
         </article>
         <article class="info-card accent">
@@ -363,8 +493,8 @@
         <article class="concept-card">
           <h3>Asszociáció: két minőségi ismérv</h3>
           <p>
-            Ilyenkor <strong>kereszttáblában</strong> gondolkodunk. A lényeg nem csak az, hogy hányan vannak egy-egy cellában,
-            hanem hogy a soron vagy oszlopon belüli arányok mennyire térnek el egymástól.
+            Ilyenkor kereszttáblában gondolkodunk. Nem csak az számít, hányan vannak a cellákban, hanem az is,
+            hogy a soron vagy oszlopon belüli arányok mennyire térnek el egymástól.
           </p>
         </article>
         <article class="concept-card">
@@ -380,26 +510,43 @@
       <div class="formula-rack">
         <article class="formula-card">
           <h3>Várt gyakoriság függetlenség esetén</h3>
-          <p>Ha nincs kapcsolat, ezt „várnánk” az adott cellában.</p>
-          <code>f*ᵢⱼ = (sorösszeg · oszlopösszeg) / N</code>
+          <p>Ha nincs kapcsolat, ezt várnánk az adott cellában.</p>
+          <code class="formula-code">f*<sub>ij</sub> = (sorösszeg · oszlopösszeg) / N</code>
+          <ul class="symbol-list">
+            <li><code>f*<sub>ij</sub></code>: várt gyakoriság az i. sor, j. oszlop cellában.</li>
+            <li><code>N</code>: összes megfigyelés száma.</li>
+            <li>A csillag azt jelzi, hogy ez elméleti, nem megfigyelt érték.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Khi-négyzet</h3>
-          <p>Azt méri, mennyire távoliak a tényleges gyakoriságok a függetlenség mellett várttól.</p>
-          <code>χ² = Σ (fᵢⱼ - f*ᵢⱼ)² / f*ᵢⱼ</code>
+          <p>Azt méri, mennyire térnek el a tényleges gyakoriságok a függetlenség mellett várttól.</p>
+          <code class="formula-code">χ² = Σ (f<sub>ij</sub> - f*<sub>ij</sub>)² / f*<sub>ij</sub></code>
+          <ul class="symbol-list">
+            <li><code>f<sub>ij</sub></code>: tényleges gyakoriság.</li>
+            <li><code>χ² = 0</code>: tökéletes illeszkedés a függetlenséghez.</li>
+            <li>Nagyobb érték: erősebb eltérés a függetlenségtől.</li>
+          </ul>
         </article>
         <article class="formula-card">
           <h3>Cramer-féle V</h3>
-          <p>A kapcsolat szorosságát 0 és 1 között mutatja. Vizsgán ezt könnyebb értelmezni, mint a nyers χ²-t.</p>
-          <code>V = √(χ² / (N · min(r-1, c-1)))</code>
+          <p>0 és 1 közé skálázott szorossági mutató, ezért könnyebb értelmezni, mint a nyers <code>χ²</code>-t.</p>
+          <code class="formula-code">V = √(χ² / (N · min(r-1, c-1)))</code>
+          <ul class="symbol-list">
+            <li><code>r</code>, <code>c</code>: a sorok és oszlopok száma.</li>
+            <li><code>V = 0</code>: nincs kapcsolat.</li>
+            <li><code>V ≈ 0,2-0,3</code>: gyenge vagy gyenge-közepes kapcsolat.</li>
+            <li><code>V</code> 1-hez közel: nagyon erős kapcsolat.</li>
+          </ul>
         </article>
       </div>
 
       <div class="mini-summary">
         <h3>Mit mondj értelmezésnél?</h3>
         <p>
-          Ha a feltételes megoszlások látványosan különböznek, akkor valószínűleg van kapcsolat. A khi-négyzet ezt számszerűsíti,
-          de az elemszámtól is függ. A Cramer-féle V már jobban összehasonlítható, mert 0 és 1 közé skálázott.
+          Ha a feltételes megoszlások látványosan különböznek, akkor valószínűleg van kapcsolat. A khi-négyzet ezt
+          számszerűsíti, de az elemszámtól is függ. A Cramer-féle V már jobban összehasonlítható, mert 0 és 1 közé skálázott.
+          Az értelmezésnél mindig tedd hozzá, hogy ez a kapcsolat erősségét jelzi, nem az okságot.
         </p>
       </div>
     </section>
@@ -409,9 +556,8 @@
         <span class="eyebrow">8. hét</span>
         <h2>Vegyes kapcsolat: mit magyaráz meg a csoportosító ismérv?</h2>
         <p>
-          A vegyes kapcsolatnál az egyik változó <strong>minőségi</strong> (például nem, beosztás, régió),
-          a másik pedig <strong>mennyiségi</strong> (például bér, BMI, munkaóra). A kérdés itt az:
-          a csoportok közötti különbségek mekkora részt magyaráznak meg a teljes szóródásból?
+          A vegyes kapcsolatnál az egyik változó minőségi, a másik mennyiségi. A kulcskérdés itt az, hogy a csoportok közötti
+          különbség mekkora részt magyaráz meg a teljes szóródásból.
         </p>
       </div>
 
@@ -419,22 +565,22 @@
         <article class="info-card">
           <h3>Főátlag és részátlagok</h3>
           <p>
-            Először kiszámolod a teljes sokaság átlagát, utána az egyes csoportok átlagát. Már ebből is látszik,
-            hogy mennyire húzzák szét egymást a kategóriák.
+            Először kiszámolod a teljes sokaság átlagát, utána az egyes csoportok átlagát. Már ebből látszik,
+            mennyire húzzák szét egymást a kategóriák.
           </p>
         </article>
         <article class="info-card accent">
           <h3>Belső és külső szóródás</h3>
           <p>
-            A teljes szóródás két forrásból áll: az értékek eltérnek a saját csoportjuk átlagától,
-            és a csoportátlagok is eltérnek a főátlagtól.
+            A teljes szóródás két forrásból áll: az értékek eltérnek a saját csoportjuk átlagától, és a csoportátlagok
+            is eltérnek a főátlagtól.
           </p>
         </article>
         <article class="info-card caution">
           <h3>Tipikus vizsgahiba</h3>
           <p>
-            A nagy <code>H²</code> nem azt jelenti, hogy biztos oksági hatás van. Csak azt, hogy a csoportosító ismérv
-            a szóródás nagy részét „együtt mozgatja”.
+            A nagy <code>H²</code> nem azt jelenti, hogy biztos oksági kapcsolat van. Csak azt, hogy a csoporttagság
+            a szóródás nagy részét együtt mozgatja.
           </p>
         </article>
       </div>
@@ -443,26 +589,26 @@
         <div class="diagram-copy">
           <h3>Szórásnégyzet-felbontás logikája</h3>
           <p>
-            Ezt kell fejben látni: a teljes különbség egy része a csoportokon belüli ingadozásból jön,
-            a másik része abból, hogy a csoportok átlagai eleve távol vannak egymástól.
+            Ezt kell fejben látni: a teljes különbség egy része a csoportokon belüli ingadozásból jön, a másik része pedig abból,
+            hogy a csoportok átlagai eleve távol vannak egymástól.
           </p>
         </div>
         <svg class="diagram-svg" viewBox="0 0 900 240" role="img" aria-label="Teljes, belső és külső szóródás kapcsolata">
           <rect x="60" y="86" width="250" height="72" rx="22"></rect>
           <text x="185" y="117" text-anchor="middle">Teljes szóródás</text>
-          <text x="185" y="143" text-anchor="middle">SST vagy σ²</text>
+          <text x="185" y="143" text-anchor="middle">SST vagy σ²<sub>teljes</sub></text>
 
           <rect x="380" y="34" width="200" height="72" rx="22"></rect>
           <text x="480" y="65" text-anchor="middle">Belső szóródás</text>
-          <text x="480" y="91" text-anchor="middle">SSBelső vagy σ²belső</text>
+          <text x="480" y="91" text-anchor="middle">SS<sub>belső</sub> vagy σ²<sub>belső</sub></text>
 
           <rect x="380" y="136" width="200" height="72" rx="22"></rect>
           <text x="480" y="167" text-anchor="middle">Külső szóródás</text>
-          <text x="480" y="193" text-anchor="middle">SSKülső vagy σ²külső</text>
+          <text x="480" y="193" text-anchor="middle">SS<sub>külső</sub> vagy σ²<sub>külső</sub></text>
 
           <rect x="650" y="86" width="190" height="72" rx="22"></rect>
-          <text x="745" y="117" text-anchor="middle">SST = SSBelső</text>
-          <text x="745" y="143" text-anchor="middle">+ SSKülső</text>
+          <text x="745" y="117" text-anchor="middle">SST = SS<sub>belső</sub></text>
+          <text x="745" y="143" text-anchor="middle">+ SS<sub>külső</sub></text>
 
           <path d="M310 122 L380 70"></path>
           <path d="M310 122 L380 172"></path>
@@ -475,17 +621,37 @@
         <article class="formula-card">
           <h3>H² jelentése</h3>
           <p>Megmutatja, hogy a csoportosító ismérv a teljes szóródás mekkora hányadát magyarázza.</p>
-          <code>H² = σ²külső / σ²teljes</code>
+          <code class="formula-code">H² = σ²<sub>külső</sub> / σ²<sub>teljes</sub></code>
+          <ul class="symbol-list">
+            <li><code>σ²<sub>külső</sub></code>: a csoportátlagok különbségeiből eredő szóródás.</li>
+            <li><code>σ²<sub>teljes</sub></code>: a teljes sokaság teljes szóródása.</li>
+            <li><code>H² = 0</code>: a csoportosító ismérv semmit nem magyaráz.</li>
+            <li><code>H² = 0,65</code>: a teljes szóródás 65%-át magyarázza.</li>
+          </ul>
         </article>
+
         <article class="formula-card">
           <h3>H jelentése</h3>
-          <p>0 és 1 közötti szorossági mutató, a vegyes kapcsolat „erejét” fejezi ki.</p>
-          <code>H = √H²</code>
+          <p><code>H</code> a szorossági mutató. A <code>H²</code> négyzetgyöke, ezért 0 és 1 közé esik.</p>
+          <code class="formula-code">H = √H²</code>
+          <ul class="symbol-list">
+            <li><code>H = 0</code>: nincs kapcsolat.</li>
+            <li><code>H ≈ 0,3-0,5</code>: gyenge vagy közepes kapcsolat.</li>
+            <li><code>H ≈ 0,6-0,8</code>: közepesnél erősebb kapcsolat.</li>
+            <li><code>H</code> 1-hez közel: nagyon erős kapcsolat.</li>
+          </ul>
         </article>
+
         <article class="formula-card">
-          <h3>Értelmezés</h3>
-          <p>Ha például <code>H² = 0,65</code>, akkor a teljes szóródás 65%-át a csoportkülönbségek magyarázzák.</p>
-          <code>H² százalékosan is olvasható</code>
+          <h3>Mit jelentenek ezek együtt?</h3>
+          <p>A két mutatót együtt érdemes nézni:</p>
+          <code class="formula-code">H² = magyarázott hányad
+H = a kapcsolat szorossága</code>
+          <ul class="symbol-list">
+            <li>Ha <code>H²</code> magas, sokat magyaráznak a csoportkülönbségek.</li>
+            <li>Ha <code>H</code> magas, a kapcsolat szoros.</li>
+            <li>A mintafeladatban: <code>H² ≈ 0,842</code> és <code>H ≈ 0,918</code>, ez nagyon erős kapcsolat.</li>
+          </ul>
         </article>
       </div>
 
@@ -495,15 +661,14 @@
           <ul class="bullet-list">
             <li>Ha a részátlagok nagyon különböznek, akkor a külső szóródás nagy lesz.</li>
             <li>Ha a csoportokon belül is nagyon szórtak az értékek, a belső szóródás lesz domináns.</li>
-            <li>Az erős vegyes kapcsolat feltétele: kicsi belső, nagy külső szóródás.</li>
+            <li>Az erős vegyes kapcsolat feltétele: kicsi belső és nagy külső szóródás.</li>
           </ul>
         </article>
         <article class="concept-card">
-          <h3>Hol kapcsolódik ide a korreláció?</h3>
+          <h3>Hogyan mondd ezt vizsgán?</h3>
           <p>
-            A megadott 8. heti anyag a korrelációt még inkább felismerési szinten említi meg: akkor kell,
-            amikor <strong>mindkét</strong> ismérv mennyiségi. A részletes vegyes kapcsolat-számolás viszont
-            már teljes egészében ide tartozik.
+            Például így: „A <code>H² = 0,842</code> alapján a teljes szóródás 84,2%-át a csoporttagság magyarázza,
+            a <code>H = 0,918</code> pedig nagyon erős vegyes kapcsolatot jelez, mert az értéke közel van az 1-hez.”
           </p>
         </article>
       </div>
@@ -515,11 +680,10 @@
         <h2>30 másodperces ellenőrzőlista</h2>
       </div>
       <ul class="bullet-list">
+        <li>Ránézésre meg tudod mondani, mit jelent az <code>x̄</code>, a <code>σ²</code>, a <code>χ²</code>, a <code>V</code> és a <code>H</code>?</li>
         <li>Tudod, mikor kell medián és mikor számtani átlag?</li>
-        <li>Meg tudod mondani, mitől érzékeny a szórás az outlierekre?</li>
         <li>Felismered, hogy két változó milyen kapcsolatvizsgálati típust igényel?</li>
-        <li>El tudod mondani, mit jelent a Cramer-féle V, illetve a H²?</li>
-        <li>Rá tudsz nézni egy eredményre, és magyarul is el tudod magyarázni?</li>
+        <li>El tudod mondani magyarul, mit jelent például az, hogy <code>H² = 0,65</code>?</li>
       </ul>
       <a class="button primary" href="szamolasok.html">Gyakorlás a mintafeladatokkal</a>
     </section>

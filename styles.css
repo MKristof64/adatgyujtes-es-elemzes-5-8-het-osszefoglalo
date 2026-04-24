@@ -1,11 +1,12 @@
 :root {
   --bg: #fff8ef;
   --bg-alt: #fffdf8;
-  --surface: rgba(255, 255, 255, 0.86);
-  --surface-strong: rgba(255, 255, 255, 0.95);
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: rgba(255, 255, 255, 0.96);
   --ink: #17303a;
   --muted: #5e6b72;
   --line: rgba(23, 48, 58, 0.12);
+  --line-strong: rgba(23, 48, 58, 0.18);
   --accent: #0f766e;
   --accent-soft: rgba(15, 118, 110, 0.12);
   --accent-strong: #0b5d57;
@@ -33,7 +34,7 @@ body {
   margin: 0;
   color: var(--ink);
   font-family: "Space Grotesk", sans-serif;
-  line-height: 1.65;
+  line-height: 1.68;
   background:
     radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 28%),
     radial-gradient(circle at top right, rgba(15, 118, 110, 0.18), transparent 30%),
@@ -78,7 +79,7 @@ main,
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 999px;
   backdrop-filter: blur(14px);
@@ -109,7 +110,8 @@ main,
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .main-nav a {
@@ -147,7 +149,7 @@ main {
   display: grid;
   grid-template-columns: 1.35fr 0.95fr;
   gap: 1.5rem;
-  padding: 4rem 0 2.8rem;
+  padding: 4rem 0 2.2rem;
   align-items: start;
 }
 
@@ -166,12 +168,27 @@ main {
 .exam-box,
 .table-card,
 .step-card,
-.note-card {
+.note-card,
+.section-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
+}
+
+.hero-copy,
+.hero-panel,
+.info-card,
+.concept-card,
+.formula-card,
+.mini-summary,
+.table-card,
+.step-card,
+.exam-box,
+.diagram-card,
+.section-card {
+  padding: 1.45rem;
 }
 
 .hero-copy {
@@ -211,11 +228,11 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.85rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
 }
 
 h3 {
-  font-size: 1.32rem;
+  font-size: 1.28rem;
 }
 
 p {
@@ -223,9 +240,21 @@ p {
 }
 
 .lead {
-  max-width: 62ch;
+  max-width: 66ch;
   font-size: 1.05rem;
   color: var(--muted);
+}
+
+.hero-copy > p,
+.hero-panel > p,
+.section-heading > p,
+.info-card > p,
+.concept-card > p,
+.diagram-copy > p,
+.mini-summary > p,
+.step-card > p,
+.note-card > p {
+  max-width: 66ch;
 }
 
 .hero-actions,
@@ -268,16 +297,22 @@ p {
   background: linear-gradient(135deg, rgba(245, 196, 81, 0.22), rgba(249, 115, 22, 0.12));
 }
 
-.section-heading {
-  margin-bottom: 1.4rem;
-}
-
 .overview,
 .topic-section,
 .formula-board,
 .problem-section,
 .exam-box {
   margin-top: 2rem;
+  scroll-margin-top: 7rem;
+}
+
+.section-card,
+.topic-section {
+  padding: 1.6rem;
+}
+
+.section-heading {
+  margin-bottom: 1.4rem;
 }
 
 .week-strip {
@@ -291,7 +326,7 @@ p {
   padding: 1.2rem;
   display: flex;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .week-number {
@@ -323,11 +358,10 @@ p {
 .concept-card,
 .formula-card,
 .mini-summary,
-.table-card,
-.step-card,
-.exam-box,
-.diagram-card {
-  padding: 1.35rem;
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
 .info-card.accent {
@@ -345,25 +379,87 @@ p {
   margin-top: 1.25rem;
 }
 
-.formula-card code,
-.step-card code,
-.concept-card code {
-  display: inline-block;
-  margin-top: 0.35rem;
-  padding: 0.45rem 0.7rem;
-  border-radius: 12px;
-  background: rgba(18, 36, 46, 0.06);
+.formula-code {
+  display: block;
+  margin-top: 0.45rem;
+  padding: 0.75rem 0.9rem;
+  width: 100%;
+  border: 1px solid rgba(23, 48, 58, 0.1);
+  border-radius: 14px;
+  background: rgba(18, 36, 46, 0.05);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.97rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.symbol-table {
+  display: grid;
+  gap: 0;
+}
+
+.symbol-row {
+  display: grid;
+  grid-template-columns: minmax(90px, 130px) 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  padding: 0.8rem 0;
+  border-top: 1px dashed rgba(23, 48, 58, 0.14);
+}
+
+.symbol-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.symbol-row:last-child {
+  padding-bottom: 0;
+}
+
+.symbol-row code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 12px;
+  background: rgba(18, 36, 46, 0.06);
+  border: 1px solid rgba(23, 48, 58, 0.08);
+  font-size: 0.95rem;
+}
+
+.symbol-row p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.symbol-list,
+.bullet-list {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.symbol-list li + li,
+.bullet-list li + li {
+  margin-top: 0.45rem;
 }
 
 .diagram-card {
   margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 1.2rem;
+  align-items: center;
   overflow: hidden;
 }
 
 .diagram-copy {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .diagram-svg {
@@ -392,18 +488,9 @@ p {
   stroke-width: 4;
 }
 
-.bullet-list {
-  margin: 0;
-  padding-left: 1.15rem;
-}
-
-.bullet-list li + li {
-  margin-top: 0.5rem;
-}
-
 .mini-summary {
   margin-top: 1.25rem;
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(255, 255, 255, 0.78));
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(255, 255, 255, 0.8));
 }
 
 .exam-box {
@@ -453,8 +540,12 @@ p {
   min-height: 100%;
 }
 
+.step-card.full {
+  grid-column: 1 / -1;
+}
+
 .step-card.emphasis {
-  background: linear-gradient(135deg, rgba(15, 118, 110, 0.15), rgba(255, 255, 255, 0.86));
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.15), rgba(255, 255, 255, 0.9));
 }
 
 .table-card {
@@ -472,6 +563,7 @@ td {
   padding: 0.95rem 0.8rem;
   border-bottom: 1px solid var(--line);
   text-align: left;
+  vertical-align: top;
 }
 
 thead th {
@@ -491,7 +583,8 @@ tbody tr:last-child td {
   .card-grid.two,
   .formula-rack,
   .week-strip,
-  .step-grid {
+  .step-grid,
+  .diagram-card {
     grid-template-columns: 1fr;
   }
 
@@ -524,6 +617,10 @@ tbody tr:last-child td {
   .site-footer {
     flex-direction: column;
   }
+
+  .symbol-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 620px) {
@@ -542,7 +639,9 @@ tbody tr:last-child td {
   .table-card,
   .diagram-card,
   .exam-box,
-  .mini-summary {
+  .mini-summary,
+  .section-card,
+  .topic-section {
     padding: 1.15rem;
     border-radius: 22px;
   }
