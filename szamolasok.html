@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Számolások | Adatgyűjtés és elemzés 5-8. hét</title>
+  <meta name="description" content="Részletes, lépésről lépésre megoldott mintafeladatok az Adatgyűjtés és elemzés tárgy 5-8. heti anyagához.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-noise"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">AE</span>
+      <span>Adatgyűjtés és elemzés</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
+    <nav id="main-nav" class="main-nav" aria-label="Fő navigáció">
+      <a href="index.html">Elmélet</a>
+      <a href="#feladat1">Feladat 1</a>
+      <a href="#feladat4">Feladat 4</a>
+      <a href="#feladat5">Feladat 5</a>
+      <a href="#feladat6">Feladat 6</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact">
+      <div class="hero-copy">
+        <span class="eyebrow">Mintafeladatok, nem csak végeredmények</span>
+        <h1>Számolások, lépésről lépésre</h1>
+        <p class="lead">
+          Minden feladatnál külön bontva látod a logikát, a képletet, a behelyettesítést, az eredményt és azt is,
+          hogy <strong>mit jelent magyarul</strong> a kapott szám. Ez a rész direkt úgy készült, hogy vizsga előtt végig lehessen pörgetni.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <h2>Hogyan használd?</h2>
+        <ul class="bullet-list">
+          <li>Először próbáld meg fejben eldönteni, milyen típusú feladat.</li>
+          <li>Csak utána nézd meg a képletet.</li>
+          <li>A végén mindig olvasd el az értelmezést is.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="formula-board">
+      <div class="section-heading">
+        <span class="eyebrow">Mini képletlap</span>
+        <h2>Amit érdemes a feladatok előtt fejben tartani</h2>
+      </div>
+      <div class="formula-rack">
+        <article class="formula-card">
+          <h3>Középértékek</h3>
+          <code>x̄ = Σxᵢ / N, &nbsp; Me = középső rangsorelem, &nbsp; Mo = leggyakoribb érték</code>
+        </article>
+        <article class="formula-card">
+          <h3>Szórás</h3>
+          <code>σ² = Σ(xᵢ - x̄)² / N, &nbsp; σ = √σ², &nbsp; V = σ / x̄ · 100%</code>
+        </article>
+        <article class="formula-card">
+          <h3>Kapcsolatvizsgálat</h3>
+          <code>χ² = Σ(f - f*)² / f*, &nbsp; V = √(χ² / (N · min(r-1,c-1))), &nbsp; H² = σ²külső / σ²teljes</code>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat1" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 1</span>
+        <h2>Középértékek és outlier hatása</h2>
+        <p>Öt hallgató napi tanulási ideje órában: <code>12, 13, 13, 14, 48</code></p>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Mit kell észrevenni?</h3>
+          <p>
+            A <code>48</code> nagyon kilóg a többi érték közül. Ez tipikus <strong>outlier</strong>, ezért érdemes
+            egyszerre megnézni az átlagot, a mediánt és a móduszt.
+          </p>
+        </article>
+        <article class="step-card">
+          <h3>2. Rendezés</h3>
+          <p>Már rendezett az adatsor: <code>12, 13, 13, 14, 48</code>.</p>
+        </article>
+        <article class="step-card">
+          <h3>3. Számtani átlag</h3>
+          <code>x̄ = (12 + 13 + 13 + 14 + 48) / 5 = 100 / 5 = 20</code>
+          <p>Az átlag <strong>20 óra</strong>.</p>
+        </article>
+        <article class="step-card">
+          <h3>4. Medián</h3>
+          <p>Öt adat van, ezért a középső, vagyis a 3. értéket keressük.</p>
+          <code>Me = 13</code>
+        </article>
+        <article class="step-card">
+          <h3>5. Módusz</h3>
+          <p>A leggyakoribb érték a <code>13</code>, mert ez fordul elő kétszer.</p>
+          <code>Mo = 13</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>6. Értelmezés</h3>
+          <p>
+            A hallgatók „tipikus” tanulási ideje inkább <strong>13 óra</strong>, nem 20. Az átlagot a 48 órás kiugró érték felfelé húzta.
+            Ezért ferde vagy outlieres eloszlásnál a medián gyakran jobb összefoglaló mutató.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat2" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 2</span>
+        <h2>Harmonikus átlag: átlagsebesség</h2>
+        <p>Egy biciklis ugyanakkora távolságot tesz meg odafelé <code>8 km/h</code>, visszafelé <code>32 km/h</code> sebességgel.</p>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Miért nem számtani átlag?</h3>
+          <p>
+            Mert itt <strong>azonos távolságokra jutó sebességeket</strong> átlagolunk. Ilyenkor a harmonikus átlag a jó eszköz.
+          </p>
+        </article>
+        <article class="step-card">
+          <h3>2. Képlet két értékre</h3>
+          <code>Xh = 2 / (1/8 + 1/32)</code>
+        </article>
+        <article class="step-card">
+          <h3>3. Számolás</h3>
+          <code>1/8 = 0,125</code><br>
+          <code>1/32 = 0,03125</code><br>
+          <code>0,125 + 0,03125 = 0,15625</code><br>
+          <code>2 / 0,15625 = 12,8</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>4. Értelmezés</h3>
+          <p>
+            Az átlagsebesség <strong>12,8 km/h</strong>. Azért nem 20, mert a lassabb szakaszon sokkal több időt töltött a biciklis.
+            Ez a harmonikus átlag lényege: az időhatást jól veszi figyelembe.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat3" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 3</span>
+        <h2>Mértani átlag: átlagos növekedési ütem</h2>
+        <p>Egy mutató három év alatt rendre <code>+8%</code>, <code>+12%</code> és <code>-4%</code> változást mutatott.</p>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Miért mértani átlag?</h3>
+          <p>
+            Növekedési ütemeknél nem összeadjuk, hanem <strong>egymásra építjük</strong> a változásokat, ezért a szorzat logikája kell.
+          </p>
+        </article>
+        <article class="step-card">
+          <h3>2. Szorzattényezők</h3>
+          <p>A százalékokat először átváltjuk szorzótényezőre:</p>
+          <code>1,08; 1,12; 0,96</code>
+        </article>
+        <article class="step-card">
+          <h3>3. Képlet és számolás</h3>
+          <code>Xg = (1,08 · 1,12 · 0,96)^(1/3)</code><br>
+          <code>Xg = (1,161216)^(1/3) ≈ 1,0511</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>4. Értelmezés</h3>
+          <p>
+            Az átlagos éves változás <strong>kb. +5,11%</strong>. Nem egyszerűen a három százalék számtani átlaga kell,
+            mert az nem venné figyelembe a láncolódó hatást.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat4" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 4</span>
+        <h2>Szórás és relatív szórás</h2>
+        <p>Öt hallgató pontszáma: <code>6, 8, 10, 12, 14</code></p>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Átlag</h3>
+          <code>x̄ = (6 + 8 + 10 + 12 + 14) / 5 = 50 / 5 = 10</code>
+        </article>
+        <article class="step-card">
+          <h3>2. Eltérések az átlagtól</h3>
+          <code>-4, -2, 0, 2, 4</code>
+          <p>Ezek mutatják, ki mennyivel tér el a középtől.</p>
+        </article>
+        <article class="step-card">
+          <h3>3. Négyzetre emelés</h3>
+          <code>16, 4, 0, 4, 16</code>
+          <p>Azért négyzetre emelünk, hogy a negatív és pozitív eltérések ne oltsák ki egymást.</p>
+        </article>
+        <article class="step-card">
+          <h3>4. Variancia</h3>
+          <code>σ² = (16 + 4 + 0 + 4 + 16) / 5 = 40 / 5 = 8</code>
+        </article>
+        <article class="step-card">
+          <h3>5. Szórás</h3>
+          <code>σ = √8 ≈ 2,83</code>
+        </article>
+        <article class="step-card">
+          <h3>6. Relatív szórás</h3>
+          <code>V = 2,83 / 10 · 100% ≈ 28,3%</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>7. Értelmezés</h3>
+          <p>
+            A pontszámok átlagosan <strong>2,83 ponttal</strong> térnek el az átlagtól. A relatív szórás szerint ez
+            az átlag kb. <strong>28,3%-a</strong>, tehát a sokaság közepesen szórt.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat5" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 5</span>
+        <h2>Asszociáció: kereszttábla, khi-négyzet, Cramer-féle V</h2>
+        <p>100 hallgatónál azt nézzük, van-e kapcsolat a tanulási forma és a vizsgaeredmény között.</p>
+      </div>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanulási forma</th>
+              <th>Átment</th>
+              <th>Nem ment át</th>
+              <th>Összesen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Csoportos</td>
+              <td>36</td>
+              <td>14</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Egyéni</td>
+              <td>24</td>
+              <td>26</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Összesen</td>
+              <td>60</td>
+              <td>40</td>
+              <td>100</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Feltételes arányok</h3>
+          <p>Csoportos tanulásnál az átmenési arány: <code>36 / 50 = 72%</code></p>
+          <p>Egyéni tanulásnál az átmenési arány: <code>24 / 50 = 48%</code></p>
+          <p>Már ebből látszik, hogy valószínűleg van kapcsolat.</p>
+        </article>
+        <article class="step-card">
+          <h3>2. Várt gyakoriságok függetlenség esetén</h3>
+          <p>Például a csoportos-átment cellára:</p>
+          <code>f* = (50 · 60) / 100 = 30</code>
+          <p>Ugyanígy kapjuk a többi várt értéket: <code>30, 20, 30, 20</code>.</p>
+        </article>
+        <article class="step-card">
+          <h3>3. Khi-négyzet számítása</h3>
+          <code>χ² = (36-30)²/30 + (14-20)²/20 + (24-30)²/30 + (26-20)²/20</code><br>
+          <code>χ² = 1,2 + 1,8 + 1,2 + 1,8 = 6,0</code>
+        </article>
+        <article class="step-card">
+          <h3>4. Cramer-féle V</h3>
+          <code>V = √(6 / (100 · min(2-1, 2-1)))</code><br>
+          <code>V = √0,06 ≈ 0,245</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>5. Értelmezés</h3>
+          <p>
+            Van kapcsolat a tanulási forma és a vizsgaeredmény között, mert a tényleges és várt gyakoriságok eltérnek.
+            A <code>V ≈ 0,245</code> alapján ez inkább <strong>gyenge-közepes erősségű kapcsolat</strong>, nem extrém erős.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="feladat6" class="problem-section">
+      <div class="problem-header">
+        <span class="problem-tag">Feladat 6</span>
+        <h2>Vegyes kapcsolat: szórásnégyzet-felbontás, H² és H</h2>
+        <p>Három részleg havi teljesítményértékei:</p>
+      </div>
+
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Részleg A</th>
+              <th>Részleg B</th>
+              <th>Részleg C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100</td>
+              <td>150</td>
+              <td>180</td>
+            </tr>
+            <tr>
+              <td>120</td>
+              <td>160</td>
+              <td>200</td>
+            </tr>
+            <tr>
+              <td>140</td>
+              <td>170</td>
+              <td>220</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="step-grid">
+        <article class="step-card">
+          <h3>1. Részátlagok</h3>
+          <code>A: (100+120+140)/3 = 120</code><br>
+          <code>B: (150+160+170)/3 = 160</code><br>
+          <code>C: (180+200+220)/3 = 200</code>
+        </article>
+        <article class="step-card">
+          <h3>2. Főátlag</h3>
+          <code>x̄ = (100+120+140+150+160+170+180+200+220) / 9</code><br>
+          <code>x̄ = 1440 / 9 = 160</code>
+        </article>
+        <article class="step-card">
+          <h3>3. Belső eltérésnégyzet-összeg</h3>
+          <p>A saját csoportátlagtól vett eltérések négyzeteinek összege:</p>
+          <code>SSBelső = 800 + 200 + 800 = 1800</code>
+        </article>
+        <article class="step-card">
+          <h3>4. Külső eltérésnégyzet-összeg</h3>
+          <p>A részátlagok eltérése a főátlagtól, csoportlétszámmal súlyozva:</p>
+          <code>SSKülső = 3·(120-160)² + 3·(160-160)² + 3·(200-160)²</code><br>
+          <code>SSKülső = 4800 + 0 + 4800 = 9600</code>
+        </article>
+        <article class="step-card">
+          <h3>5. Teljes eltérésnégyzet-összeg</h3>
+          <code>SST = SSBelső + SSKülső = 1800 + 9600 = 11400</code>
+        </article>
+        <article class="step-card">
+          <h3>6. H² és H</h3>
+          <code>H² = 9600 / 11400 ≈ 0,8421 = 84,21%</code><br>
+          <code>H = √0,8421 ≈ 0,918</code>
+        </article>
+        <article class="step-card emphasis">
+          <h3>7. Értelmezés</h3>
+          <p>
+            A teljes szóródás kb. <strong>84,2%-át</strong> a részlegek közötti különbség magyarázza.
+            Ez nagyon erős vegyes kapcsolatot jelez, mert a csoportok átlagai erősen elkülönülnek egymástól.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="exam-box">
+      <div>
+        <span class="eyebrow">Zárás előtt</span>
+        <h2>Ha csak 1 perc marad</h2>
+      </div>
+      <ul class="bullet-list">
+        <li>Mindig azonosítsd a változótípust, mielőtt képletet választasz.</li>
+        <li>Az outlier leggyakrabban az átlagot és a szórást torzítja.</li>
+        <li>A khi-négyzet eltérésmutató, a Cramer-féle V szorossági mutató.</li>
+        <li>A H² százalékosan is értelmezhető: megmagyarázott szóródási hányad.</li>
+      </ul>
+      <a class="button primary" href="index.html">Vissza az elméleti összefoglalóra</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Tanulási tipp</strong>
+      <p>Próbáld meg minden feladat után saját szavaiddal is kimondani, mit jelent az eredmény.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Elmélet</a>
+      <a href="#feladat1">Feladatok eleje</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
